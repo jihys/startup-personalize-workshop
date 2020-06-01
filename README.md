@@ -62,7 +62,7 @@ CloudFormation Template 을 활용하여 작업 환경을 구성합니다.
 
 아래의 "Next" 버튼을 눌러서 CloudFormation 설정 작업을 시작 합니다.
 
-[![StackWizard](https://github.com/jihys/startup-personalize-workshop/static/imgs/img1.png)](https://github.com/jihys/startup-personalize-workshop/static/imgs/img1.png)
+[![StackWizard](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img1.png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img1.png)
 
 
 
