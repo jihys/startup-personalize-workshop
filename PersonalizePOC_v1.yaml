@@ -7,12 +7,12 @@ Parameters:
 
   BucketName:
     Type: String
-    Default: personalizedemofirstnamelastname
+    Default: personalize-<firstname>-<lastname>
     Description: The name of the S3 Bucket to create, use only characters and numbers, no special characters or spaces.
 
   NotebookName:
     Type: String
-    Default: PersonalizeDemoLab
+    Default: PersonalizeLab
     Description: Enter the name of the SageMaker notebook instance. Deafault is PersonalizeDemoLab.
 
   VolumeSize:
@@ -63,6 +63,7 @@ Resources:
       NotebookInstanceName: !Ref NotebookName
       RoleArn: !GetAtt SageMakerIamRole.Arn
       VolumeSizeInGB: !Ref VolumeSize
+      #DefaultCodeRepository: https://github.com/aws-samples/amazon-personalize-samples.git
       DefaultCodeRepository: https://github.com/jihys/startup-personalize-workshop.git
 
 Outputs:

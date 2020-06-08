@@ -54,7 +54,7 @@ CloudFormation Template 을 활용하여 작업 환경을 구성합니다.
 
 
 
-[![Launch Stack](https://camo.githubusercontent.com/210bb3bfeebe0dd2b4db57ef83837273e1a51891/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f636c6f7564666f726d6174696f6e2d6578616d706c65732f636c6f7564666f726d6174696f6e2d6c61756e63682d737461636b2e706e67)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=PersonalizePOC&templateURL=https://jihys-personalize-ap-northeast-2.s3.ap-northeast-2.amazonaws.com/PersonalizePOC.yaml)
+[![Launch Stack](https://camo.githubusercontent.com/210bb3bfeebe0dd2b4db57ef83837273e1a51891/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f636c6f7564666f726d6174696f6e2d6578616d706c65732f636c6f7564666f726d6174696f6e2d6c61756e63682d737461636b2e706e67)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=PersonalizePOC&templateURL=https://jihys-personalize-ap-northeast-2.s3.ap-northeast-2.amazonaws.com/PersonalizePOC_v1.yaml)
 
 추가 궁금한 사항은 아래 스크린 샷의 가이드를 따라 합니다. 
 
@@ -72,35 +72,35 @@ CloudFormation Template 을 활용하여 작업 환경을 구성합니다.
 
 다음과 같은 설정을 해 줍니다.  
 
-1. 고유한 S3 버킷 이름을 지정합니다. S3 이름은 모든 리전에서 고유하게 설정되어야 합니다. 따라서 본인의 이름을 영어 소문자로 더해 줍니다. (예: personalize-poc-jihye)
-2. Stack name을 원하는 대로 변경해 변경해 주세요. (예: PersonalizePOC)
+1. 고유한 S3 버킷 이름을 지정합니다. S3 이름은 모든 리전에서 고유하게 설정되어야 합니다. 따라서 본인의 이름을 영어 소문자로 더해 줍니다. (예: personalizelab-jihye-seo)
+2. Stack name을 원하는 대로 변경해 변경해 주세요. (예: PersonalizeLab)
 3. 노트북 이름을 변경해 주세요. (Optional)
 
 1. SageMaker Notebook instance에 EBS 볼륨을 더 할당 하고 싶으신 경우(데이터 셋이 클경우) 더 큰 사이즈로 변경하세요.기본은 10GB 입니다. 
 
 모든 작업이 끝나면 `Next` 버튼을 클릭합니다.
 
-[![StackWizard2](https://github.com/aws-samples/amazon-personalize-samples/raw/master/workshops/POC_in_a_box/static/imgs/img2.png)](https://github.com/aws-samples/amazon-personalize-samples/blob/master/workshops/POC_in_a_box/static/imgs/img2.png)
+[![StackWizard2](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img2.png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img2.png)
 
 해당 페이지에서 밑에까지 스크롤 다운 한뒤에  `Next` 버튼을 클릭합니다. 해당 페이지에서는 모든 default설정은 POC를 하는데 충분합니다. 필요시에만 변경 하도록 합니다. 
 
-[![StackWizard3](https://github.com/aws-samples/amazon-personalize-samples/raw/master/workshops/POC_in_a_box/static/imgs/img3.png)](https://github.com/aws-samples/amazon-personalize-samples/blob/master/workshops/POC_in_a_box/static/imgs/img3.png)
+[![StackWizard3](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img3.png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img3.png)
 
 다시 아래까지 스크롤 한 뒤, CloudFormation Template이 IAM 자원을 생성할 수 있는 권한을 줄수 있도록 box를 체크합니다. 그리고  `Create Stack` 을 클릭합니다.
 
-[![StackWizard4](https://github.com/aws-samples/amazon-personalize-samples/raw/master/workshops/POC_in_a_box/static/imgs/img4.png)](https://github.com/aws-samples/amazon-personalize-samples/blob/master/workshops/POC_in_a_box/static/imgs/img4.png)
+[![StackWizard4](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img14png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img4.png)
 
 
 
 몇 분뒤 CloudFormation은 새로운 자원을 생성하게 됩니다. 프로지버닝 단계에서는 다음과 같은 화면이 보일 것 입니다.
 
-[![StackWizard5](https://github.com/aws-samples/amazon-personalize-samples/raw/master/workshops/POC_in_a_box/static/imgs/img5.png)](https://github.com/aws-samples/amazon-personalize-samples/blob/master/workshops/POC_in_a_box/static/imgs/img5.png)
+[![StackWizard5](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img5.png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img5.png)
 
 모든 작업이 완성이 된 후에는 Status가 글씨로 아래와 같이 "CREATE_COMPLETE" 로 보이게 됩니다. 
 
 
 
-[![StackWizard5](https://github.com/aws-samples/amazon-personalize-samples/raw/master/workshops/POC_in_a_box/static/imgs/img6.png)](https://github.com/aws-samples/amazon-personalize-samples/blob/master/workshops/POC_in_a_box/static/imgs/img6.png)
+[![StackWizard5](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img6.png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img6.png)
 
 이제 AWS Management 콘솔 페이지에서  `Services` 클릭 후  `SageMaker`서비스를 조회한 하여 클릭한 후 SageMaker메뉴로 이동 합니다.
 
@@ -110,7 +110,7 @@ SageMaker콘솔에서 Notebook에서 본인이 방금 생성한 노트북을 찾
 
 
 
-[![StackWizard5](https://github.com/aws-samples/amazon-personalize-samples/raw/master/workshops/POC_in_a_box/static/imgs/img8.png)](https://github.com/aws-samples/amazon-personalize-samples/blob/master/workshops/POC_in_a_box/static/imgs/img8.png)
+[![StackWizard5](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img8.png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img8.png)
 
 선택한 SageMaker notebook 에서  `Open JupyterLab` 을 클릭합니다. 
 
@@ -118,7 +118,7 @@ SageMaker콘솔에서 Notebook에서 본인이 방금 생성한 노트북을 찾
 
 
 
-이는 workshop을 위해 필요한 Jupyter 환경을 오픈합니다. Jupyter는 데이터 사이언스를 위한 IDE환경입니다. `PersonalizeWorkshop` 이는 자동으로 폴더를 오픈 This will open the Jupyter environment for your POC; think of it as a web based data science IDE if you are not familiar with it. It should  automatically open the `PersonalizePOC` folder for you, if  not, just click on the folder icon in the browser on the left side of  the screen and follow the documentation below to get started with your  POC!
+이는 workshop을 위해 필요한 Jupyter Notebook 환경을 오픈합니다. Jupyter Notebook은 데이터 사이언스를 위한 IDE환경입니다. `startup-personalize-workshop` 이라는 폴더가 자동으로 오픈 될 것입니다. 만약 해당 폴더위치가 아니라면 브라우저의 화면의 왼편에 Folder icon 을 클릭하여 문서 가이드 대로 따라 합니다.  
 
 ## 
 
