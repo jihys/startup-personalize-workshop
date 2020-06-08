@@ -19,29 +19,60 @@ Amazon Personalize는 추천 / 개인화 모델을 빠르고 효과적으로 구
 ##### 솔루션 생성하기
 
 - Amazon Personalize에 제공하는 다양한 알고리즘을 통해 솔루션(사용자 추천 모델)을 생성해 봅니다.
-- 사용자 기반 추천/아이템 기반 추천/Cold-start 아이템 추천의 결과를 확인해 봅니다.
+
+  
 
 ##### 캠페인 생성 
 
 - 생성된 모델을 활용하여 개인화 결과를 얻어 봅니다.
 - Real-time서빙과 Batch recommendation 차이에 대해 알아보고 적합한 적용 방식에 대해 알아봅니다. 
+- 사용자 기반 추천/아이템 기반 추천/Cold-start 아이템 추천의 결과를 확인해 봅니다.
 
 ##### 성능 분석 
 
 - 추천 모델 성능 지표에 대한 메트릭에 대해 알아 봅니다.
+- 사용자 기반 추천/아이템 기반 추천/Cold-start 아이템 추천의 결과를 확인해 봅니다.
 
 
 
 ## 순서
 
-1. 작업 환경 구성하기 [see below]
-2. Validating and importing user-item-interaction data - `01_Validating_and_Importing_User_Item_Interaction_Data.ipynb`
-3. Validating and importing item-metadata [in development] - `Validating_and_Importing_Item_Metadata.ipynb`
-4. Creating and evaluating your first solutions - `02_Creating_and_Evaluating_Solutions.ipynb`
-5. Importing item / user metadata [in development]
-6. Creating and evaluating related metadata solutions [in development]
-7. Deploying and interacting with campaigns - `03_Deploying_Campaigns_and_Interacting.ipynb`
-8. Cleaning up the resources on your AWS account - `04_Clean_Up_Resources.ipynb`
+이 LAB의 모든 작업은 순서대로 진행 되어야 하며, 이 전 모듈이 완료 되어야 다음 모듈을 실행 할 수 있습니다.
+
+###### Module 0. 작업 환경 구성하기 
+
+아래 '작업 환경 구성하기' 가이드에 따라 환경구성을 해줍니다.
+
+###### Module1 . Validating and importing user-item-interaction data 
+
+이 모듈에 데이터 정제 작업 및 S3 bucket 업로드 과정, Personalize Schema 정의 및 Data import작업을 진행합니다. `01_Validating_and_Importing_User_Item_Interaction_Data.ipynb` 의 가이드를 따라 합니다.
+
+###### Module2.  Creating and evaluating your first solutions
+
+이 모듈에서는 Amazon Personalize에서 제공하는 알고리즘(Recipe)을 기반하여 고객 데이터를 가지고 학습한 뒤 모델(Solution)을 생성하도록 합니다.  또한 기본으로 제공하는 metric에 대해 간략히 알아보도록 합니다. 
+
+`02_Creating_and_Evaluating_Solutions.ipynb`의 가이드를 따라 합니다. 
+
+###### Module3. Deploying_Campaigns
+
+이 모듈에서는 만들어진 모델을 서비스를 위해 배포 하는 과정에 대해 알아보니다. 
+
+1. Deployment and capacity planning
+2. How to interact with a deployed solution (various approaches)
+3. Real-time interactions
+4. Batch exporting
+
+###### Module 4. Create Event Tracker and ineracting with personalize 
+
+이번 모듈에서는 Event Tracker를 생서한 뒤 임의로 Interaction 정보를 Personalize에 보내 최근 추천 결과에 어떤 변화가 있는지 알아봅니다.  `4.Create_EventTracker_and_view_Interactions.ipynb` 의 가이드를 따라 합니다. 
+
+###### Module 5. Evaluation with test dataset
+
+이번 모듈에서는 모듈 1에서 따로 분리했던 테스트용 데이터 세트를 활용하여 각각의 솔루션들의 성능을 추가로 확인해 보도록 합니다. 모델은 신규 아이템이 추가 되거나 시간이 지날수로 추천 정확도가 떨어질 수 있습니다. 이 모듈에서 진행하는 내용은 배포된 모델의 성능에 문제가 없는지 확인해 보는데 사용 될 수도 있습니다. 
+
+###### Module 6. Cleaning Up
+
+워 크샾이 끝난 후에 모든 자원을 삭제 하기 위해서는 `06_Clean_Up_Resources.ipynb` 노트북 가이드를 따라 합니다. 여기서는 배포된 모든 Personalize자원을 삭제 하는 방법에 대해 알려줍니다.
 
 
 
@@ -104,7 +135,7 @@ CloudFormation Template 을 활용하여 작업 환경을 구성합니다.
 
 이제 AWS Management 콘솔 페이지에서  `Services` 클릭 후  `SageMaker`서비스를 조회한 하여 클릭한 후 SageMaker메뉴로 이동 합니다.
 
-[![StackWizard5](https://github.com/aws-samples/amazon-personalize-samples/raw/master/workshops/POC_in_a_box/static/imgs/img7.png)](https://github.com/aws-samples/amazon-personalize-samples/blob/master/workshops/POC_in_a_box/static/imgs/img7.png)
+[![StackWizard5](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img7.png](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img7.png)
 
 SageMaker콘솔에서 Notebook에서 본인이 방금 생성한 노트북을 찾아 클릭합니다.
 
@@ -114,7 +145,7 @@ SageMaker콘솔에서 Notebook에서 본인이 방금 생성한 노트북을 찾
 
 선택한 SageMaker notebook 에서  `Open JupyterLab` 을 클릭합니다. 
 
-[![StackWizard5](https://github.com/aws-samples/amazon-personalize-samples/raw/master/workshops/POC_in_a_box/static/imgs/img9.png)](https://github.com/aws-samples/amazon-personalize-samples/blob/master/workshops/POC_in_a_box/static/imgs/img9.png)
+[![StackWizard5](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img9.png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img9.png)
 
 
 
@@ -122,57 +153,7 @@ SageMaker콘솔에서 Notebook에서 본인이 방금 생성한 노트북을 찾
 
 ## 
 
-## Validating and Importing User-Item-Interaction Data
-
-The core data for every algorithm supported in Amazon Personalize is  user-item-interaction data; this notebook will guide you through the  process of identifying this data, then formatting it for the service,  defining your schema, and lastly importing it.
-
-Open `01_Validating_and_Importing_User_Item_Interaction_Data.ipynb` and follow along there.
-
-Once you have completed this, you can move on to creating and evaluating your first solutions.
-
-## 
-
-## Validating and Importing Item Metadata [in development]
-
-Amazon Personalize has several algorithms that can give you a results with no metadata. However, the HRNN-Metadata algorithm might be an  interesting resource to deploy, depending your dataset. In case it is,  there is an optional item metadata notebook below. It is similar to the  process for users, and the only algorithm that supports either data type is HRNN-Metadata.
-
-Open `Validating_and_Importing_Item_Metadata.ipynb` and follow along there to prepare the dataset for the POC/Amazon Personalize.
-
-## 
-
-## Creating and Evaluating Your First Solutions
-
-In Amazon Personalize there is a concept of a solution, which is a  trained model based on the data that you've provided to the service. All models are private and no data sharing occurs between accounts or even  between dataset groups. This notebook will guide you through the process of training models; aka building a solution for:
-
-- HRNN
-- SIMS
-- Personalized-Ranking
-
-Something you may notice is that each of these algorithms or recipes  solves a critically different problem. The goal is to show you how to  build things that address a host of problems from a relatively simple  dataset.
-
-Open `02_Creating_and_Evaluating_Solutions.ipynb` and follow along to build these solutions and see their results.
-
-### 
-
-### Deploying Your Campaigns and Interacting with Personalize
-
-Once you have a series of trained solutions the next step is to deploy them. This is done inside `03_Deploying_Campaigns_and_Interacting.ipynb`. Here you will learn:
-
-1. Deployment and capacity planning
-2. How to interact with a deployed solution (various approaches)
-3. Real-time interactions
-4. Batch exporting
 
 
 
-### Next Steps
 
-Following these notebooks should have left you with a series of  working models for your customer. From here, you will look to leverage  how the customer accomplishes AB testing today against their goals  (coversions, clicks, etc) and then start sending traffic to these models and monitoring those metrics. Over time this should build confidence  and will be your path to production at scale.
-
-More content on AB testing coming soon as well.
-
-### 
-
-### Cleaning Up
-
-워크샾이 끝난 후에 모든 자원을 삭제 하기 위해서는 `04_Clean_Up_Resources.ipynb` 노트북 가이드를 따라 합니다. 여기서는 배포된 모든 Personalize자원을 삭제 하는 방법에 대해 알려줍니다.
