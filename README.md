@@ -9,7 +9,7 @@ Amazon Personalize는 추천 / 개인화 모델을 빠르고 효과적으로 구
 
 ## 목표
 
-이번 워크샾을 통해 프로그래밍 방식으로 Amazon Personalize를 활용하여 개인화 추천 결과를 구축하는 방법에 대해 알아봅니다.  이번 워크샾에서는 다읍과 같은 내용을 배우게 됩니다.
+이번 워크샾을 통해 프로그래밍 방식으로 Amazon Personalize를 활용하여 개인화 추천 결과를 구축하는 방법에 대해 알아봅니다.  워크샾을 통해 다음과 같은 내용을 배우게 됩니다.
 
 ##### 데이터 준비하기
 
@@ -53,14 +53,19 @@ Amazon Personalize는 추천 / 개인화 모델을 빠르고 효과적으로 구
 
 `02_Creating_and_Evaluating_Solutions.ipynb`의 가이드를 따라 합니다. 
 
-###### Module3. Deploying_Campaigns
+###### Module3. Deploying_Campaigns_getRecommendation
 
-이 모듈에서는 만들어진 모델을 서비스를 위해 배포 하는 과정에 대해 알아보니다. 
+이 모듈에서는 만들어진 모델을 서비스를 위해 배포 하는 과정에 대해 알아보니다. `3.Deploying_Campaigns_getRecommendation.ipynb` 의 가이드를 따라 해 봅니다.
 
 1. Deployment and capacity planning
+
 2. How to interact with a deployed solution (various approaches)
+
 3. Real-time interactions
+
 4. Batch exporting
+
+   
 
 ###### Module 4. Create Event Tracker and ineracting with personalize 
 
@@ -119,7 +124,7 @@ CloudFormation Template 을 활용하여 작업 환경을 구성합니다.
 
 다시 아래까지 스크롤 한 뒤, CloudFormation Template이 IAM 자원을 생성할 수 있는 권한을 줄수 있도록 box를 체크합니다. 그리고  `Create Stack` 을 클릭합니다.
 
-[![StackWizard4](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img14png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img4.png)
+[![StackWizard4](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img4png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img4.png)
 
 
 
