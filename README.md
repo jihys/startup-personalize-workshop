@@ -124,7 +124,11 @@ CloudFormation Template 을 활용하여 작업 환경을 구성합니다.
 
 다시 아래까지 스크롤 한 뒤, CloudFormation Template이 IAM 자원을 생성할 수 있는 권한을 줄수 있도록 box를 체크합니다. 그리고  `Create Stack` 을 클릭합니다.
 
+<<<<<<< HEAD
 [![StackWizard4](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img4png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img4.png)
+=======
+[![StackWizard4](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img4.png)](https://github.com/jihys/startup-personalize-workshop/blob/master/static/imgs/img4.png)
+>>>>>>> f38d7c1d3633a56fe763fdd6f3443faf35d99e9e
 
 
 
